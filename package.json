@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "prettier": "prettier --write \"**/*.{js,json,css,md,ts,html,component.html}\"",
     "start": "ng serve",
     "local": "ng serve --port 14200",
     "build": "ng build",
@@ -39,12 +40,26 @@
     "@types/jest": "^23.3.11",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
+    "husky": "latest",
     "jest": "latest",
     "jest-preset-angular": "latest",
+    "lint-staged": "latest",
+    "prettier": "latest",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.1.1",
     "angular-playground": "^5.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md,ts,html,component.html}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
