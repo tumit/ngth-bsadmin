@@ -4,12 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "local": "ng serve --port 14200",
     "build": "ng build",
     "test": "jest",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test:watch": "jest --watch",
-    "playground": "angular-playground"
+    "playground": "angular-playground",
+    "json-server": "json-server --watch test/db.json"
   },
   "private": true,
   "dependencies": {
