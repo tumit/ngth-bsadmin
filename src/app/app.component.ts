@@ -18,9 +18,6 @@ export class AppComponent implements OnInit {
     private http: HttpClient) { }
 
   ngOnInit(): void {
-    if (this.global.window.performance) {
-      console.info("window.performance work's fine on this browser");
-    }
     this.http.get('http://localhost:3000/posts/1').subscribe(v => console.log(v));
   }
 
